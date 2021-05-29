@@ -7,13 +7,23 @@
      {% endfor %}
    {% endif %}
 {% endwith %}
-<form action="/update/{{date}}" method="post">
-  <p>login</p>
-   <label >update whatever you want:</label><br>
-   <textarea  name="content" rows="10" cols="100">
-      {{msg}}
-   </textarea><br>
-   <input type="submit" value="submit"/>
+<div class="row">
+   <div class="col-md-2 col-lg- col-sm-2 ">
+
+   </div>
+   <div class="col-md-8 col-lg-8 col-sm-8 ">
+      <form action="/update/{{date}}" method="post">
+          <div class="mb-3">
+            <label class="form-label">update whatever you want</label>
+            <textarea class="form-control" name="content" rows="3">{{msg}}</textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          
+       </form>
+   </div>
+   <div class="col-md-2 col-lg- col-sm-2 ">
+
+   </div>
    
-</form>
+</div>
 {%endblock%}
