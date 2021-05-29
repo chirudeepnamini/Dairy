@@ -1,0 +1,37 @@
+ {%extends "base.html"%}
+ {%block body%}
+
+<body>
+  <div class="row">
+     <div class="col-md-4 col-lg-4 col-sm-4 ">
+
+     </div>
+     <div class="col-md-4 col-lg-4 col-sm-4 ">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/login" method="post">
+          <div class="mb-3">
+            <label  class="form-label"  >Email address</label>
+            <input type="email" class="form-control"  name="email">
+          </div>
+          <div class="mb-3">
+            <label  class="form-label" >Password</label>
+            <input type="password" class="form-control" name="pwd">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>        
+     </div>
+     <div class="col-md-4 col-lg-4 col-sm-4 ">
+
+     </div>
+     
+  </div>
+</body>
+
+{%endblock%}

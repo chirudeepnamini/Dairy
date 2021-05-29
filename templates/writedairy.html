@@ -1,0 +1,33 @@
+{%extends "base.html"%}
+{%block body%}
+
+<body>
+   <div class="row">
+      <div class="col-md-2 col-lg- col-sm-2 ">
+
+      </div>
+      <div class="col-md-8 col-lg-8 col-sm-8 ">
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+           {% for message in messages %}
+             {{ message }}
+           {% endfor %}
+         {% endif %}
+         {% endwith %}
+         
+         <div class="form-group mt-2" >
+            <form  action="/writedairy" method="post" >
+               <label >Date:</label><br>
+               <input class="form-control" type="date"  name="date"><br>
+               <label>Write whatever you want...</label>
+               <textarea class="form-control" name="content" rows="10" cols="100"></textarea>
+               <button type="submit" class="btn btn-primary">Submit</button>
+         </div>
+      </div>
+      <div class="col-md-2 col-lg- col-sm-2 ">
+
+      </div>
+      
+   </div>
+</body>
+{%endblock%}
